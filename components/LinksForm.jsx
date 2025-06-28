@@ -94,15 +94,8 @@ const options = [
 function ShowIcons({ label }) {
   return options.map((opt, i) => {
     if (
-      opt.icon.type.name
-        .toLowerCase()
-        .replaceAll(" ", "")
-        .replaceAll(".", "")
-        .includes(
-          !label
-            ? "github"
-            : label?.toLowerCase()?.replaceAll(" ", "")?.replaceAll(".", ""),
-        )
+      opt.label.toLowerCase().replaceAll(" ", "").replaceAll(".", "") ===
+      (label?.toLowerCase()?.replaceAll(" ", "")?.replaceAll(".", "") || "")
     ) {
       return <div key={i}>{opt.icon}</div>;
     }
