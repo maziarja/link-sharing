@@ -170,6 +170,11 @@ function LinksForm({ index, onRemove, link, onPlatformChange, onUrlChange }) {
         </div>
         <div className="border-borders hover:shadow-purple hover:border-purple-hover mt-1 flex w-full items-center gap-2 rounded-lg border bg-white pr-2 pl-8 text-left hover:border-1 hover:shadow-lg/20">
           <select
+            style={{
+              WebkitAppearance: "none",
+              MozAppearance: "none",
+              appearance: "none",
+            }}
             className="w-full rounded-lg py-3 outline-0"
             id={`platform-${index}`}
             // required
@@ -185,6 +190,9 @@ function LinksForm({ index, onRemove, link, onPlatformChange, onUrlChange }) {
               </option>
             ))}
           </select>
+          <div className="text-grey pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
+            <MdKeyboardArrowDown />
+          </div>
         </div>
       </div>
       <label className="text-body-s text-dark-grey" htmlFor={`link-${index}`}>
