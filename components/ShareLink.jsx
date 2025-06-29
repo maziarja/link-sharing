@@ -122,7 +122,7 @@ function ShareLink({ link, isMockup = false }) {
 
       return (
         <Link
-          href={link.url}
+          href={`/${link.url}`}
           className={`text-body-m mb-2 flex w-full items-center rounded-lg ${isMockup ? "p-2.5" : "p-4"} ${
             opt.value === "Frontend Mentor"
               ? "text-dark-grey border-borders border-1"
