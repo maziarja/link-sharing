@@ -108,7 +108,8 @@ function LinksForm({ index, onRemove, link, onPlatformChange, onUrlChange }) {
   const [error, setError] = useState("");
 
   // check if url is correct
-  const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[\w-./?%&=]*)?$/i;
+  // const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[\w-./?%&=]*)?$/i;
+  const urlRegex = /^https:\/\/[^\s/$.?#].[^\s]*$/;
   const isValidURL = (str) => urlRegex.test(str);
 
   const handlePlatformChange = (e) => {

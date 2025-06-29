@@ -16,7 +16,6 @@ import { FaHashnode } from "react-icons/fa6";
 import { DiStackoverflow } from "react-icons/di";
 import { BiRightArrowAlt } from "react-icons/bi";
 import toast from "react-hot-toast";
-import Link from "next/link";
 
 const options = [
   {
@@ -108,17 +107,17 @@ const options = [
 function ShareLink({ link, isMockup = false }) {
   return options.map((opt, i) => {
     if (link.platform === opt.value) {
-      const handleCopy = async () => {
-        try {
-          if (link.url === undefined) return;
-          const url = link.url;
-          await navigator.clipboard.writeText(url);
-          toast.success("The link has been copied to your clipboard!");
-        } catch (err) {
-          console.error("Failed to copy:", err);
-          toast.error("Failed to copy");
-        }
-      };
+      // const handleCopy = async () => {
+      //   try {
+      //     if (link.url === undefined) return;
+      //     const url = link.url;
+      //     await navigator.clipboard.writeText(url);
+      //     toast.success("The link has been copied to your clipboard!");
+      //   } catch (err) {
+      //     console.error("Failed to copy:", err);
+      //     toast.error("Failed to copy");
+      //   }
+      // };
 
       return (
         <a
