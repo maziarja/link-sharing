@@ -121,8 +121,8 @@ function ShareLink({ link, isMockup = false }) {
       };
 
       return (
-        <Link
-          href={`/${link.url}`}
+        <a
+          href={`${link.url}`}
           className={`text-body-m mb-2 flex w-full items-center rounded-lg ${isMockup ? "p-2.5" : "p-4"} ${
             opt.value === "Frontend Mentor"
               ? "text-dark-grey border-borders border-1"
@@ -134,7 +134,7 @@ function ShareLink({ link, isMockup = false }) {
           <p className="mr-2">{opt.icon}</p>
           <p>{opt.label}</p>
           <BiRightArrowAlt className="ml-auto" />
-        </Link>
+        </a>
       );
     }
   });
