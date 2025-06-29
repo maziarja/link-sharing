@@ -16,6 +16,7 @@ import { FaHashnode } from "react-icons/fa6";
 import { DiStackoverflow } from "react-icons/di";
 import { BiRightArrowAlt } from "react-icons/bi";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 const options = [
   {
@@ -120,8 +121,8 @@ function ShareLink({ link, isMockup = false }) {
       };
 
       return (
-        <button
-          onClick={handleCopy}
+        <Link
+          href={link.url ? link.url : ""}
           className={`text-body-m mb-2 flex w-full items-center rounded-lg ${isMockup ? "p-2.5" : "p-4"} ${
             opt.value === "Frontend Mentor"
               ? "text-dark-grey border-borders border-1"
@@ -133,7 +134,7 @@ function ShareLink({ link, isMockup = false }) {
           <p className="mr-2">{opt.icon}</p>
           <p>{opt.label}</p>
           <BiRightArrowAlt className="ml-auto" />
-        </button>
+        </Link>
       );
     }
   });
